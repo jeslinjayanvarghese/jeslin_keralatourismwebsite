@@ -1,0 +1,21 @@
+*{
+    margin:0;
+    padding:0;
+}
+.myMargin{
+    margin:25px;
+    padding-top: 20px;
+   }
+.form-label{
+    color:white;
+}
+.form-text{
+    color:white;
+}
+.form-check-label{
+    color:white;
+}
+.carousel-item{
+    width:640px;
+    height: 500px;
+}

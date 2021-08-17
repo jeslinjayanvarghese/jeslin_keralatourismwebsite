@@ -1,0 +1,43 @@
+*{
+    margin:0;
+    padding:0;
+}
+.myMargin{
+    margin:25px;
+    padding-top: 20px;
+   }
+.aligndiv{
+    align-content: center;
+}
+body{
+    margin:0;
+    padding:0;
+    height:auto;
+    width:auto;
+    
+    background-color: black;
+    background-size:cover;
+    background-repeat: no-repeat;
+} 
+/* .equal-height-columns{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+
+} */
+
+.heading{
+    color:white;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+   
+}
+.about{
+    color: white;
+    text-align:justify;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
