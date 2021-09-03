@@ -6,10 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KERALA TOURISM</title>
     <link rel="stylesheet" href="./css/style1.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </head>
+<style>
+  
+  #StrengthDisp {
+  border-radius: 6px;
+}
+</style>
 <body style="background-color: black;">
 <!-- nav starts -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -66,48 +76,66 @@
   <div class="row">
       <!-- login form -->
 <div class="col-lg-3 myMargin">
-    <form class="row g-3">
-      <div class="col-md-6">
+ 
+    <form class="row g-3" action="index.html" onsubmit="return validate();">
+      <div class="col-md-12">
         <label for="inputEmail4" class="form-label">Email</label>
-        <input type="email" class="form-control" id="inputEmail4">
-      </div>
-      <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">Password</label>
-        <input type="password" class="form-control" id="inputPassword4">
+        <input type="email" class="form-control" id="inputEmail4" onkeyup="return emailvalidate();">
+        <div id="emailHelp" class="form-text" style="color:white">We'll never share your email with anyone else.</div>
+
       </div>
       <div class="col-12">
         <label for="inputAddress" class="form-label">Phone</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="+91 ">
+        <input type="tel" class="form-control" id="inputAddress" min="10" placeholder="+91 " onkeyup="return validatephone();">
+        <label id="error_msg" style="color:red; visibility: hidden;">INVALID: Enter a 10 digit Phone number!</label>
       </div>
-      <div class="col-12">
+      <div class="col-md-12">
+        <label for="inputPassword4" class="form-label">Password</label>
+        <input type="password" class="form-control" id="inputPassword4" onkeyup="return passwordChanged(this.value);">
+        <small class="help-block" id="password-text" style="color:white"><ul>
+          <li>Uppercase & Lowercase</li>
+          <li>Number (0-9)</li>
+          <li>Special Character (!@#$%^&')</li>
+          <li>Atleast 8 Characters or more</li>
+        </ul></small>
+      
+      </div>
+      <span id="StrengthDisp" class="displayBadge"></span>
+    
+      <div class="col-md-12">
+        <label for="inputCpd" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" id="inputcpd" onkeyup="return pass2();" >
+        <div id="cpdhelp" class="form-text" style="color:white"></div>
+      </div>
+      
+      <!-- <div class="col-12">
         <label for="inputAddress2" class="form-label">Address</label>
         <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
       </div>
       <div class="col-md-6">
         <label for="inputCity" class="form-label">City</label>
         <input type="text" class="form-control" id="inputCity">
-      </div>
-      <div class="col-md-4">
+      </div> -->
+      <!-- <div class="col-md-4">
         <label for="inputState" class="form-label">State</label>
         <select id="inputState" class="form-select">
           <option selected>Choose...</option>
-          <option>...</option>
+          <option>Kerala</option>
+          <option>Tamil Nadu</option>
+          <option>Karnataka</option>
+          <option>Maharastra</option>
+          <option>AndhraPradesh</option>
         </select>
-      </div>
-      <div class="col-md-2">
+      </div> -->
+      <!-- <div class="col-md-6">
         <label for="inputZip" class="form-label">Zip</label>
         <input type="text" class="form-control" id="inputZip">
       </div>
-      <div class="col-12">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck">
-          <label class="form-check-label" for="gridCheck">
-            Check me out
-          </label>
-        </div>
-      </div>
+       -->
+      
       <div class="col-12 d-grid gap-2 col-6 mx-auto">
-        <button type="submit" class="btn btn-primary">SIGN UP</button>
+        <button type="submit" class="btn btn-primary" id="regbtn">SIGN UP</button>
+        <a href="login.html" class="btn btn-primary">LOGIN</a>
       </div>
     </form>
     </div>
@@ -160,6 +188,6 @@
   <!-- carousel ends here -->
   <div class="col-lg-4"></div>
 
-
+<script src=form.js></script>
 </body>
 </html>

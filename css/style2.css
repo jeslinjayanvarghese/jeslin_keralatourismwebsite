@@ -41,3 +41,8 @@ body{
     margin-left: 3rem;
     margin-right: 3rem;
 }
+.carousel-item{
+
+    width: 500px;
+    height: 500px;
+}
