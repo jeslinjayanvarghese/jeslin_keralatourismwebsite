@@ -10,7 +10,7 @@ var zip = document.getElementById("inputZip");
 var btn = document.getElementById("regbtn");
 var strength = document.getElementById('StrengthDisp');
 //var pdnomatch = document.getElementById("password-text");
-btn.disabled = true;
+
 
 // function validate()
 // {
@@ -64,6 +64,7 @@ function validate(){
     // 
     
 }
+btn.disabled = true;
     
     
 
