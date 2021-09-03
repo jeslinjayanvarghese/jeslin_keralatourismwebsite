@@ -41,6 +41,10 @@ function validate(){
         alert("Phone Cannot be Empty!");
         return false;
     }
+    if(isNaN(phone.value.trim())){
+            alert("Phone should be a number!");
+            return false;
+    }
     // if(address.value.trim()==""){
     //     alert("Address Cannot be Empty!");
     //     return false;
@@ -57,10 +61,7 @@ function validate(){
     //     alert("Zip Cannot be Empty!");
     //     return false;
     // }
-    // if(isNaN(zip.value.trim())){
-    //     alert("Zip should be a number!");
-    //     return false;
-    // }
+    // 
     
 }
     
