@@ -11,7 +11,7 @@ var btn = document.getElementById("regbtn");
 var strength = document.getElementById('StrengthDisp');
 //var pdnomatch = document.getElementById("password-text");
 
-
+btn.disabled = true;
 // function validate()
 // {
 //     if(validate1() && emailvalidate() && validatephone() && pdcheck())
@@ -24,7 +24,8 @@ var strength = document.getElementById('StrengthDisp');
 // }
 
 function validate(){
-    
+    var regex = /[^A-Za-z]/g;
+
     if(email.value.trim()==""){
         alert("Email Cannot be Empty!");
         return false;
@@ -41,9 +42,12 @@ function validate(){
         alert("Phone Cannot be Empty!");
         return false;
     }
-    if(isNaN(phone.value.trim())){
-            alert("Phone should be a number!");
-            return false;
+    if(regex.test(phone.value)){
+        return true;
+    }
+    else{
+        alert("Phone should be a number!");
+        return false;
     }
     // if(address.value.trim()==""){
     //     alert("Address Cannot be Empty!");
@@ -64,7 +68,7 @@ function validate(){
     // 
     
 }
-btn.disabled = true;
+
     
     
 
