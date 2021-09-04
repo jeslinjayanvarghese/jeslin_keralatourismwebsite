@@ -49,23 +49,6 @@ function validate(){
         alert("Phone should be a number!");
         return false;
     }
-    // if(address.value.trim()==""){
-    //     alert("Address Cannot be Empty!");
-    //     return false;
-    // }
-    // if(city.value.trim()==""){
-    //     alert("City Cannot be Empty!");
-    //     return false;
-    // }
-    // if(state.value==""){
-    //     alert("State Cannot be Empty!");
-    //     return false;
-    // }
-    // if(zip.value.trim()==""){
-    //     alert("Zip Cannot be Empty!");
-    //     return false;
-    // }
-    // 
     
 }
 
@@ -83,7 +66,7 @@ function emailvalidate(){
         return true;
     }
     else{
-        error.innerHTML = "Email: Invalid";
+        error.innerHTML = "Invalid Email";
         error.style.color= "red";
         return false;
     }
@@ -154,7 +137,7 @@ function validatephone(){
     var regx = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$/;
     
     if(regx.test(phone.value)){
-        document.getElementById("error_msg").innerHTML="VALID";
+        document.getElementById("error_msg").innerHTML="Valid";
         document.getElementById("error_msg").style.visibility="Visible";
         document.getElementById("error_msg").style.color="green";
         return true;
